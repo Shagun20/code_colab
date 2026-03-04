@@ -10,8 +10,7 @@ import { firestore } from "./config/firebase-admin.js";
 
 const lc = new LeetCode();
 const app = express();
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000; 
 app.use(cors({ 
   origin: ['http://localhost:5173', 'https://codecolab-mlt4q71f8-shagun20s-projects.vercel.app', 'https://codecolab-nu.vercel.app/']
 }));

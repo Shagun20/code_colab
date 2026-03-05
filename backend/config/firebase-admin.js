@@ -16,8 +16,20 @@ admin.initializeApp({
   databaseURL: process.env.FIREBASE_DATABASE_URL
 });
 
+console.log("KEY START:", process.env.FIREBASE_PRIVATE_KEY?.substring(0, 60));
+console.log("HAS NEWLINES:", process.env.FIREBASE_PRIVATE_KEY?.includes('\n'));
+console.log("HAS LITERAL \\n:", process.env.FIREBASE_PRIVATE_KEY?.includes('\\n'));
+
 export const db = admin.database();
 export const firestore = admin.firestore();
 export const auth = admin.auth();
 
 export default admin;
+// ```
+
+// And in your `credentials.env` (for local dev):
+// ```
+// FIREBASE_PROJECT_ID=colab-code-ed3cb
+// FIREBASE_CLIENT_EMAIL=firebase-adminsdk-fbsvc@colab-code-ed3cb.iam.gserviceaccount.com
+// FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEv...your full key...\n-----END PRIVATE KEY-----\n"
+// FIREBASE_DATABASE_URL=https://colab-code-ed3cb-default-rtdb.firebaseio.com

@@ -16,11 +16,8 @@ Your Turn to Choose           </h2>
             <h3 className="text-sm text-center text-white/80 shrink-0">Select Topic</h3>
 
             <div
-                className="flex items-center justify-center flex-wrap gap-2 overflow-y-auto pr-1 flex-1 min-h-0"
-                style={{
-                    scrollbarWidth: "thin",
-                    scrollbarColor: "white",
-                }}
+                className="flex items-center justify-center flex-wrap gap-2 overflow-y-auto pr-1 flex-1 min-h-0 custom-scrollbar"
+                
             >
                 {topics.map(topic => (
                     <button

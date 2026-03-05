@@ -97,7 +97,7 @@ function Lobby(props) {
     async function startNewGame(id) {
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/createGame?roomId=${id}`);
-
+            console.log('calledd api create')
             if (!response.ok) throw new Error('Network response was not ok');
 
 
